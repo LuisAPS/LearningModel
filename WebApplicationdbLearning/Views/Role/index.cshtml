@@ -1,0 +1,56 @@
+﻿@model IEnumerable<WebApplicationdbLearning.Models.Role>
+
+@{
+                /**/
+
+                ViewBag.Title = "index";
+                Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>index</h2>
+
+
+
+    <table class="table">
+        <tr>
+            
+            <th>
+                @Html.ActionLink("Agregar", "Create") 
+            </th>
+
+        </tr>
+    </table>
+
+
+
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.RoleName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateCreated)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.RoleName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateCreated)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", new { id = item.RoleId }) |
+                
+                @Html.ActionLink("Borrar", "Delete", new { id = item.RoleId })
+            </td>
+        </tr>
+    }
+
+</table>

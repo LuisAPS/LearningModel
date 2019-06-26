@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Role>
+  <Create>
+    INSERT INTO [dbo].[Role]
+    ([RoleName]
+    ,[DateCreated])
+    VALUES
+    (@RoleName
+      ,GETDATE())
+  </Create>
+  <Read>
+    SELECT [RoleId]
+    ,[RoleName]
+    ,[DateCreated]
+    FROM [dbo].[Role]
+  </Read>
+  <Update>
+    UPDATE [dbo].[Role]
+    SET [RoleName]=@RoleName,
+        [DateCreated]=GETDATE()
+    WHERE [RoleId]=@RoleId
+  </Update>
+  <Delete>
+    DELETE  FROM
+    [dbo].[Role]
+    WHERE [RoleId]=@RoleId
+  </Delete>
+</Role>

@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Person>
+  <GetPeople>
+    <![CDATA[
+      select
+PersonId, FirstName, LastName, Phone, Email, IsActive, RoleId, UserName, DateCreated
+from dbo.Person
+    ]]>
+  </GetPeople>
+</Person>
